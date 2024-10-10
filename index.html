@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Peddy Adopt web</title>
+    <style>
+      /* Optional: Style for the dropdown */
+      .dropdown {
+        display: none;
+      }
+      .dropdown.visible {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-[#FFFFFF]">
+    <nav class="w-11/12 flex justify-between items-center mx-auto p-2">
+      <div class="flex gap-2">
+        <img class="md:w-full" src="./images/logo.webp" alt="peddy-logo" />
+        <h1 class="md:text-xl text-lg font-bold">Peddy</h1>
+      </div>
+      <div
+        class="flex text-[#131313] text-md justify-between items-center gap-5 hidden md:flex"
+      >
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="md:visible hidden md:w-[50px] w-[30px] md:flex">
+        <img src="./images/Frame 4.png" alt="" />
+      </div>
+    </nav>
+    <main
+      class="w-11/12 md:mt-6 mt-2 flex flex-col justify-between items-center text-center mx-auto"
+    >
+      <h1 class="text-gray-500 p-4 md:text-lg text-sm font-semibold">
+        Bringing Families Together ❤️
+      </h1>
+      <h2 class="md:w-1/2 w-3/5 mb-6 md:text-5xl text-2xl font-bold">
+        Your Path to Adoption Starts Here
+      </h2>
+      <p class="md:w-3/5 w-3/4 mb-4 md:text-sm text-xs font-semibold">
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a.
+      </p>
+      <button
+        class="bg-[#0E7A81] text-white md:text-lg text-sm rounded-lg md:px-6 md:py-3 px-4 py-2"
+      >
+        View More
+      </button>
+      <img class="md:w-fit w-[300px]" src="./images/pet.webp" alt="" />
+    </main>
+
+    <section class="btn-section w-11/12 text-center mx-auto md:mt-16 mt-6">
+      <h3 class="md:text-4xl text-2xl font-bold">Adopt Your Best Friend</h3>
+      <p
+        class="md:w-1/2 w-3/4 text-center md:text-md text-xs text-gray-500 font-semibold mx-auto py-6"
+      >
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a.
+      </p>
+      <div
+        id="categories"
+        class="flex py-4 md:gap-16 gap-2 justify-center"
+      ></div>
+    </section>
+    <section class="pets-section">
+      <div class="w-11/12 flex justify-between items-center mx-auto">
+        <h2 class="md:text-2xl text-lg font-bold">Best Deal For you</h2>
+        <button
+          id="sort-button"
+          class="bg-[#0E7A81] text-white md:text-lg text-sm rounded-lg md:px-6 px-2 font-semibold md:py-3 py-2"
+          onclick="sortPets()"
+        >
+          Sort by price
+        </button>
+      </div>
+    </section>
+
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div
+        class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
+      ></div>
+    </div>
+
+    <section class="pet-card p-10">
+      <!-- Loader inside the pet-card div -->
+      <div
+        id="loader"
+        class="absolute inset-0 bg-white bg-opacity-80 flex items-center justify-center hidden"
+      >
+        <div
+          class="spinner-border animate-spin inline-block w-8 h-8 border-4 border-gray-500 rounded-full"
+        ></div>
+      </div>
+      <div
+        id="display-pet"
+        class="w-11/12 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 mx-auto"
+      >
+        <div
+          class="lg:col-span-3 col-span-2 card-details md:py-10 py-2 md:gap-5 gap-2"
+        >
+          <div id="pet-card" class="grid lg:grid-cols-3 grid-cols-1 relative">
+            <!-- Pet cards will be dynamically injected here -->
+          </div>
+        </div>
+        <div
+          class="col-span-1 shadow-sm border-2 border-gray-500 md:rounded-lg rounded-md"
+        >
+          <div id="like-btn" class="grid grid-cols-2 p-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-black text-white">
+      <div class="md:flex justify-between items-center px-10">
+        <div>logo section</div>
+        <div>Useful Links</div>
+        <div>Drop a Message</div>
+      </div>
+    </footer>
+    <!-- Modal Structure -->
+    <div
+      id="petModal"
+      class="fixed inset-0 hidden z-50 flex items-center justify-center bg-black bg-opacity-50"
+    >
+      <div class="bg-white p-6 rounded-lg w-[80%] md:w-[50%]">
+        <div id="modalContent" class="flex flex-col">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+        <button
+          onclick="closeModal()"
+          class="w-full border-blue-400 border-1 bg-blue-100 text-[#0E7A81] rounded-lg py-2"
+        >
+          close
+        </button>
+      </div>
+    </div>
+
+    <script src="./jsFile/logic.js"></script>
+  </body>
+</html>
