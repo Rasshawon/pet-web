@@ -9,6 +9,7 @@ const loadCategory = () => {
 
 const displayCategories = (categories) => {
   const categoryContainer = document.getElementById("categories");
+  let selectedButton = null;
   categories.forEach((item) => {
     const buttonContainer = document.createElement("div");
     buttonContainer.innerHTML = `
@@ -17,6 +18,20 @@ const displayCategories = (categories) => {
       <h2 class="p-2 md:text-lg text-sm font-bold">${item.category}</h2>
     </button>
     `;
+    const button = buttonContainer.querySelector("button");
+    button.addEventListener("click", () => {
+      if (selectedButton) {
+        selectedButton.classList.remove("border-teal-600", "text-teal-600"); // Remove styles from previously selected button
+      }
+      button.classList.add(
+        "border-2",
+        "border-teal-600",
+        "text-teal-600",
+        "rounded-full"
+      ); // Apply styles to the clicked button
+      selectedButton = button; // Update the selected button
+      loadByCategoryName(item.category);
+    });
     categoryContainer.append(buttonContainer);
   });
 };
