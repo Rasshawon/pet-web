@@ -12,9 +12,9 @@ const displayCategories = (categories) => {
   categories.forEach((item) => {
     const buttonContainer = document.createElement("div");
     buttonContainer.innerHTML = `
-    <button onclick="loadByCategoryName('${item.category}')"  class="flex justify-evenly items-center md:px-14 md:py-4  border-gray-400 border-2 rounded-lg">
-      <img class="md:w-full w-[30px] object-cover" src="${item.category_icon}" alt="" />
-      <h2 class="p-2 md:text-lg text-base font-bold">${item.category}</h2>
+    <button onclick="loadByCategoryName('${item.category}')"  class="flex justify-evenly items-center md:px-14 md:py-4 px-2  border-gray-400 border-2 rounded-lg">
+      <img class="md:w-full w-[25px] object-cover" src="${item.category_icon}" alt="" />
+      <h2 class="p-2 md:text-lg text-sm font-bold">${item.category}</h2>
     </button>
     `;
     categoryContainer.append(buttonContainer);
@@ -69,13 +69,13 @@ const displayAllPets = (pets) => {
             </div>
           </div>
           <div class="flex justify-between mt-2 ">
-            <button class="text-[#0E7A81] font-semibold   py-2 md:px-4 px-8 shadow-lg border-2 border-teal-200 rounded-lg" onclick="addToLikeContainer('${
+            <button class="text-[#0E7A81] font-semibold   py-2 md:px-4 px-2  shadow-lg border-2 border-teal-200 rounded-lg" onclick="addToLikeContainer('${
               pet.image
             }')">
               <i class="fa-regular fa-thumbs-up"></i>
             </button>
-            <button class="text-[#0E7A81] font-semibold  py-2 px-4 shadow-lg border-2 border-teal-200 rounded-lg" onclick="adoptPet(this)" >Adopt</button>
-           <button class="text-[#0E7A81] font-semibold py-2 px-4 shadow-lg border-2 border-teal-200 rounded-lg" onclick="fetchPetDetails(${
+            <button class="text-[#0E7A81] font-semibold  py-2 md:px-4 px-2  shadow-lg border-2 border-teal-200 rounded-lg" onclick="adoptPet(this)" >Adopt</button>
+           <button class="text-[#0E7A81] font-semibold py-2 md:px-4 px-2 shadow-lg border-2 border-teal-200 rounded-lg" onclick="fetchPetDetails(${
              pet.petId
            })">Details</button>
 
@@ -181,17 +181,17 @@ const showModal = (pet) => {
     <h2 class="md:text-xl text-lg font-bold">${
       pet.pet_name || "Not Available"
     }</h2>
-    <div class="flex md:gap-4 gap-2">
+    <div class="md:flex md:gap-4 ">
 
     <div>
        <div class="flex items-center  gap-1 text-gray-600">
-              <img src="/images/Frame.png" alt="" /><p class=" md:text-base text-xs">Breed: ${
+              <img class="size-4" src="/images/Frame.png" alt="" /><p class=" md:text-base text-xs">Breed: ${
                 pet.breed || "Not Available"
               }</p> 
             </div>
             
             <div class="flex items-center gap-1 text-gray-600">
-              <img class="size-4" src="https://img.icons8.com/?size=100&id=11780&format=png&color=000000" alt="" /><p class=" md:text-base text-xs">Gender: ${
+              <img class="size-4 " src="https://img.icons8.com/?size=100&id=11780&format=png&color=000000" alt="" /><p class=" md:text-base text-xs">Gender: ${
                 pet.gender || "Not Available"
               }</p> 
             </div>
@@ -203,8 +203,8 @@ const showModal = (pet) => {
    
     </div>
 <div  >
-<div class="flex items-center gap-1 text-gray-600">
-              <p class=" md:text-base text-xs"><span><i class="fa-regular fa-calendar"></i></span> Birth: ${
+<div class="flex items-center gap-1 text-gray-600"><i class="fa-regular fa-calendar"></i>
+              <p class=" md:text-base text-xs">Birth: ${
                 pet.date_of_birth || "Not Available"
               }</p>
             </div>
