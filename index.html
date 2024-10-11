@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -18,6 +23,7 @@
       rel="stylesheet"
     />
     <title>Peddy Adopt web</title>
+
     <style>
       /* Optional: Style for the dropdown */
       .dropdown {
@@ -48,6 +54,32 @@
       <div class="md:visible hidden md:w-[50px] w-[30px] md:flex">
         <img src="./images/Frame 4.png" alt="" />
       </div>
+      <div class="dropdown dropdown-end md:hidden flex">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </div>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content bg-white text-black rounded-box z-[1] w-32 p-2 shadow"
+        >
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
     </nav>
     <main
       class="w-11/12 md:mt-6 mt-2 flex flex-col justify-between items-center text-center mx-auto"
@@ -66,12 +98,15 @@
       <button
         class="bg-[#0E7A81] text-white md:text-lg text-sm rounded-lg md:px-6 md:py-3 px-4 py-2"
       >
-        View More
+        <a href="#adopt-best-friend">View More</a>
       </button>
       <img class="md:w-fit w-[300px]" src="./images/pet.webp" alt="" />
     </main>
 
-    <section class="btn-section w-11/12 text-center mx-auto md:mt-16 mt-6">
+    <section
+      id="adopt-best-friend"
+      class="btn-section w-11/12 text-center mx-auto md:mt-16 mt-6"
+    >
       <h3 class="md:text-4xl text-2xl font-bold">Adopt Your Best Friend</h3>
       <p
         class="md:w-1/2 w-3/4 text-center md:text-md text-xs text-gray-500 font-semibold mx-auto py-6"
@@ -190,7 +225,7 @@
           >
             <input
               type="text"
-              class="w-full rounded-lg px-4 py-2"
+              class="w-full text-black font-semibold rounded-lg px-4 py-2"
               placeholder="Enter Your Email "
             />
             <button
