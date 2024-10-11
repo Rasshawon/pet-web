@@ -185,18 +185,18 @@ const showModal = (pet) => {
 
     <div>
        <div class="flex items-center  gap-1 text-gray-600">
-              <img src="/images/Frame.png" alt="" /><p class=" md:text-base text-sm">Breed: ${
-                pet.breed
+              <img src="/images/Frame.png" alt="" /><p class=" md:text-base text-xs">Breed: ${
+                pet.breed || "Not Available"
               }</p> 
             </div>
             
             <div class="flex items-center gap-1 text-gray-600">
-              <img class="size-4" src="https://img.icons8.com/?size=100&id=11780&format=png&color=000000" alt="" /><p class=" md:text-base text-sm">Gender: ${
+              <img class="size-4" src="https://img.icons8.com/?size=100&id=11780&format=png&color=000000" alt="" /><p class=" md:text-base text-xs">Gender: ${
                 pet.gender || "Not Available"
               }</p> 
             </div>
 
-         <div class="flex  items-center gap-1 text-gray-600"><i class="fa-solid fa-syringe"></i><p class=" md:text-base text-sm"> Vaccinated status: ${
+         <div class="flex  items-center gap-1 text-gray-600"><i class="fa-solid fa-syringe"></i><p class=" md:text-base text-xs"> Vaccinated status: ${
            pet.vaccinated_status || "Not Available"
          }</p>
             </div>   
@@ -204,7 +204,7 @@ const showModal = (pet) => {
     </div>
 <div  >
 <div class="flex items-center gap-1 text-gray-600">
-              <p class=" md:text-base text-sm"><span><i class="fa-regular fa-calendar"></i></span> Birth: ${
+              <p class=" md:text-base text-xs"><span><i class="fa-regular fa-calendar"></i></span> Birth: ${
                 pet.date_of_birth || "Not Available"
               }</p>
             </div>
@@ -213,7 +213,7 @@ const showModal = (pet) => {
 
 
   <div class="flex items-center gap-1 text-gray-600">
-              <img class="size-4" src="https://img.icons8.com/?size=100&id=aTrWEDlg4xEW&format=png&color=000000" alt="" /><p class=" md:text-base text-sm">Price: ${
+              <img class="size-4" src="https://img.icons8.com/?size=100&id=aTrWEDlg4xEW&format=png&color=000000" alt="" /><p class=" md:text-base text-xs">Price: ${
                 pet.price || "Not Available"
               }</p> 
             </div>
@@ -224,7 +224,7 @@ const showModal = (pet) => {
     
   <hr/>
     <p class="md:text-xl text-lg font-bold">Details Information</p>
-    <p class="mb-2  md:text-base text-sm"> ${
+    <p class="mb-2  md:text-base text-xs"> ${
       pet.pet_details || "Not Available"
     }</p>
   `;
