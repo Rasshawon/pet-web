@@ -48,7 +48,9 @@ const displayAllPets = (pets) => {
           <div>
           <h3 class="font-bold text-lg">${pet.pet_name}</h3>
             <div class="flex items-center gap-1">
-              <img  src="/images/Frame.png" alt="" /> ${pet.breed}
+              <img  src="/images/Frame.png" alt="" /> ${
+                pet.breed || "Not Available"
+              }
             </div>
             <div class="flex items-center gap-1">
               <p><span><i class="fa-regular fa-calendar"></i></span> Birth: ${
@@ -70,7 +72,7 @@ const displayAllPets = (pets) => {
             <button class="text-[#0E7A81] font-semibold   py-2 md:px-4 px-8 shadow-lg border-2 border-teal-200 rounded-lg" onclick="addToLikeContainer('${
               pet.image
             }')">
-              <img class="size-4" src="https://img.icons8.com/?size=100&id=83166&format=png&color=000000" alt="" />
+              <i class="fa-regular fa-thumbs-up"></i>
             </button>
             <button class="text-[#0E7A81] font-semibold  py-2 px-4 shadow-lg border-2 border-teal-200 rounded-lg" onclick="adoptPet(this)" >Adopt</button>
            <button class="text-[#0E7A81] font-semibold py-2 px-4 shadow-lg border-2 border-teal-200 rounded-lg" onclick="fetchPetDetails(${
